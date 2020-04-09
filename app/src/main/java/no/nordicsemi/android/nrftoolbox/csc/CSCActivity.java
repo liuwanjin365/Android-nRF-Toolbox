@@ -171,16 +171,19 @@ public class CSCActivity extends BleProfileServiceReadyActivity<CSCService.CSCBi
 	@Override
 	protected void onServiceBound(final CSCService.CSCBinder binder) {
 		// not used
+		Log.e("nRF", "onServiceBound");
 	}
 
 	@Override
 	protected void onServiceUnbound() {
 		// not used
+		Log.e("nRF", "onServiceUnbound");
 	}
 
 	@Override
 	public void onServicesDiscovered(@NonNull final BluetoothDevice device, final boolean optionalServicesFound) {
 		// not used
+		Log.e("nRF", "onServicesDiscovered");
 	}
 
 	@Override
