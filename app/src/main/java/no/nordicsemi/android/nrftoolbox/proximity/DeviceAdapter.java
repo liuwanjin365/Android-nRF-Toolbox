@@ -32,7 +32,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
+import android.util.Log;
 import java.util.List;
 
 import no.nordicsemi.android.nrftoolbox.R;
@@ -44,6 +44,7 @@ class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.ViewHolder> {
 	DeviceAdapter(@NonNull final ProximityService.ProximityBinder binder) {
 		service = binder;
 		devices = service.getManagedDevices();
+		
 	}
 
 	@NonNull
@@ -127,6 +128,9 @@ class DeviceAdapter extends RecyclerView.Adapter<DeviceAdapter.ViewHolder> {
 			final boolean ready = service.isReady(device);
 
 			String name = device.getName();
+
+			Log.e("nRF", "name=" + name);
+
 			if (TextUtils.isEmpty(name))
 				name = nameView.getResources().getString(R.string.proximity_default_device_name);
 			nameView.setText(name);
