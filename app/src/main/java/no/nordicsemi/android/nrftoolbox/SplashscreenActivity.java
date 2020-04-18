@@ -71,6 +71,8 @@ public class SplashscreenActivity extends Activity {
 					}
 				}
 			}
+
+			Log.e("nRF", "newIntent launch OK!");
 			startActivity(newIntent);
 			finish();
 		}, DELAY);
@@ -89,6 +91,9 @@ public class SplashscreenActivity extends Activity {
 	private byte[] invertEndianness(final byte[] bytes) {
 		if (bytes == null)
 			return null;
+
+		Log.e("nRF", "invertEndianness length: " + bytes.length);
+
 		final int length = bytes.length;
 		final byte[] result = new byte[length];
 		for (int i = 0; i < length; i++)
