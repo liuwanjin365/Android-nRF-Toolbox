@@ -148,6 +148,7 @@ public class HRManager extends BatteryManager<HRManagerCallbacks> {
 			super.onDeviceDisconnected();
 			bodySensorLocationCharacteristic = null;
 			heartRateCharacteristic = null;
+			managerInstance = null;
 		}
 	}
 }
