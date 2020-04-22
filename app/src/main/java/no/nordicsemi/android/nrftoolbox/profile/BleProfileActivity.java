@@ -183,6 +183,7 @@ public abstract class BleProfileActivity extends AppCompatActivity implements Bl
 		final int id = item.getItemId();
 		switch (id) {
 			case android.R.id.home:
+				Log.e("nRF", "BackKey pressed");
 				onBackPressed();
 				break;
 			case R.id.action_about:
@@ -298,16 +299,19 @@ public abstract class BleProfileActivity extends AppCompatActivity implements Bl
 	@Override
 	public void onServicesDiscovered(@NonNull final BluetoothDevice device, boolean optionalServicesFound) {
 		// this may notify user or show some views
+		Log.e("nRF", "onServicesDiscovered");
 	}
 
 	@Override
 	public void onDeviceReady(@NonNull final BluetoothDevice device) {
 		// empty default implementation
+		Log.e("nRF", "onDeviceReady");
 	}
 
 	@Override
 	public void onBondingRequired(@NonNull final BluetoothDevice device) {
 		showToast(R.string.bonding);
+		Log.e("nRF", "onBondingRequired");
 	}
 
 	@Override
