@@ -40,6 +40,8 @@ public class ToolboxApplication extends Application {
 	public void onCreate() {
 		super.onCreate();
 
+		Log.e("nRF", "ToolboxApplication started....");
+
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 			DfuServiceInitiator.createDfuNotificationChannel(this);
 
