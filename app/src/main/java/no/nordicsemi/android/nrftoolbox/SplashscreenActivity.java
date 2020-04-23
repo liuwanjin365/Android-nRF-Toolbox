@@ -29,6 +29,7 @@ import android.nfc.NfcAdapter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
+import android.util.Log;
 
 public class SplashscreenActivity extends Activity {
 	/** Splash screen duration time in milliseconds */
@@ -38,6 +39,8 @@ public class SplashscreenActivity extends Activity {
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splashscreen);
+
+		Log.e("nRF", "SplashscreenActivity onCreate");
 
 		// Jump to SensorsActivity after DELAY milliseconds 
 		new Handler().postDelayed(() -> {
