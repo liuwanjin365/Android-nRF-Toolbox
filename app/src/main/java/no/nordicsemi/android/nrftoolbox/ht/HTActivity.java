@@ -77,6 +77,8 @@ public class HTActivity extends BleProfileServiceReadyActivity<HTService.HTSBind
 		tempValueView = findViewById(R.id.text_hts_value);
 		unitView = findViewById(R.id.text_hts_unit);
 		batteryLevelView = findViewById(R.id.battery);
+		TextView tmpView = batteryLevelView;
+		tmpView.setVisibility(View.GONE);
 	}
 
 	@Override
