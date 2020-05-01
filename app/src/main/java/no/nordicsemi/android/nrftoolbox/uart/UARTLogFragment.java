@@ -102,6 +102,7 @@ public class UARTLogFragment extends ListFragment implements LoaderManager.Loade
 				case BleProfileService.STATE_CONNECTING:
 				case BleProfileService.STATE_DISCONNECTING:
 					// current implementation does nothing in this states
+					Log.e("nRF", "state = BleProfileService.STATE_CONNECTING || BleProfileService.STATE_DISCONNECTING");
 				default:
 					// there should be no other actions
 					break;
@@ -136,6 +137,8 @@ public class UARTLogFragment extends ListFragment implements LoaderManager.Loade
 	@Override
 	public void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		Log.e("nRF", "UARTFragment onCreate");
 
 		LocalBroadcastManager.getInstance(requireContext()).registerReceiver(commonBroadcastReceiver, makeIntentFilter());
 
