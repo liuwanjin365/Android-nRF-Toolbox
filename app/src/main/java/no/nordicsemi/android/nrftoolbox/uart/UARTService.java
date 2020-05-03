@@ -180,6 +180,8 @@ public class UARTService extends BleProfileService implements UARTManagerCallbac
         broadcast.putExtra(EXTRA_DATA, data);
         LocalBroadcastManager.getInstance(this).sendBroadcast(broadcast);
 
+        Log.e("nRF", "UARTService onDataReceived");
+
         // send the data received to other apps, e.g. the Tasker
         final Intent globalBroadcast = new Intent(ACTION_RECEIVE);
         globalBroadcast.putExtra(BluetoothDevice.EXTRA_DEVICE, getBluetoothDevice());
@@ -231,6 +233,9 @@ public class UARTService extends BleProfileService implements UARTManagerCallbac
         // when the activity closes we need to show the notification that user is connected to the peripheral sensor
         // We start the service as a foreground service as Android 8.0 (Oreo) onwards kills any running background services
         final Notification notification = createNotification(R.string.uart_notification_connected_message, 0);
+
+         Log.e("nRF", "UARTService startForegroundService");
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startForeground(NOTIFICATION_ID, notification);
         } else {
