@@ -59,7 +59,7 @@ public class AppHelpFragment extends DialogFragment {
 	public Dialog onCreateDialog(final Bundle savedInstanceState) {
 		final Bundle args = requireArguments();
 		final StringBuilder text = new StringBuilder(getString(args.getInt(ARG_TEXT)));
-
+		Log.e("nRF", text);
 		final boolean appendVersion = args.getBoolean(ARG_VERSION);
 		if (appendVersion) {
 			try {
