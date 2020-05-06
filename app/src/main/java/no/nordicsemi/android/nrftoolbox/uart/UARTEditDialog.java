@@ -132,6 +132,8 @@ public class UARTEditDialog extends DialogFragment implements View.OnClickListen
 	public void onClick(final View v) {
 		final boolean active = activeCheckBox.isChecked();
 		final String command = field.getText().toString();
+		Log.e("nRF", "UARTEditDialog onClick");
+
 		int eol;
 
 		switch (eolGroup.getCheckedRadioButtonId()) {
