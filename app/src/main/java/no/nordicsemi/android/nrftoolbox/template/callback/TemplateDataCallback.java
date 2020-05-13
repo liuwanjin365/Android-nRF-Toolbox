@@ -37,7 +37,8 @@ public abstract class TemplateDataCallback implements ProfileDataCallback, Templ
 		}
 
 		final int value = data.getIntValue(hearRateType, offset);
-		// offset += hearRateType & 0xF;
+		
+		offset += hearRateType & 0xF;
 
 		// ...
 
